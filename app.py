@@ -2,15 +2,25 @@ from ultralytics import YOLO
 import random
 import streamlit as st
 from PIL import Image
+import boto3
 
 
 
 def extract_user_input(image=None):
 
+    """
     id = "1e2pHejcp96q-NT9VmIDEY_hCA-tiFNef"
     output = "trained_model.pt"
     gdown.download(id = id, output = output, quiet=False)
+    """
+    obj = boto3.client("s3")
 
+    obj.download_file(
+        Filename="trained_model.pt",
+        Bucket="streamlit-rps-game",
+        Key="trained_model.pt"
+    )
+    
     model = YOLO(output)
 
     result = model.predict(image)
