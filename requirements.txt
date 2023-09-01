@@ -1,4 +1,4 @@
 Pillow
 ultralytics
 boto3
-streamlit
+
