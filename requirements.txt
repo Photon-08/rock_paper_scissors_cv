@@ -2,3 +2,4 @@ Pillow
 ultralytics
 boto3
 streamlit
+opencv-python-headless
